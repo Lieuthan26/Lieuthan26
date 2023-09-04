@@ -1,0 +1,45 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class SimpleGame extends JFrame implements ActionListener {
+    private int ballX = 50;
+    private int ballY = 50;
+    private int ballSpeedX = 2;
+    private int ballSpeedY = 2;
+
+    public SimpleGame() {
+        Timer timer = new Timer(10, this);
+        timer.start();
+        setTitle("Simple Game");
+        setSize(400, 400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        ballX += ballSpeedX;
+        ballY += ballSpeedY;
+
+        if (ballX < 0 || ballX > getWidth() - 20) {
+            ballSpeedX = -ballSpeedX;
+        }
+
+        if (ballY < 0 || ballY > getHeight() - 20) {
+            ballSpeedY = -ballSpeedY;
+        }
+
+        repaint();
+    }
+
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.setColor(Color.BLUE);
+        g.fillOval(ballX, ballY, 20, 20);
+    }
+
+    public static void main(String[] args) {
+        new SimpleGame();
+    }
+}
