@@ -73,3 +73,90 @@ public class JavaPythonIntegration {
         }
     }
 }
+
+
+
+
+BÀI 2
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+// Lớp đối tượng
+class Student {
+    private String name;
+    private int age;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+// Lớp đa luồng
+class MyThread extends Thread {
+    private String message;
+
+    public MyThread(String message) {
+        this.message = message;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(message);
+            try {
+                Thread.sleep(1000); // Dừng 1 giây
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class AdvancedJavaExample {
+    public static void main(String[] args) {
+        // Sử dụng lớp đối tượng
+        Student student1 = new Student("John Doe", 20);
+        Student student2 = new Student("Jane Smith", 22);
+
+        student1.displayInfo();
+        student2.displayInfo();
+
+        // Sử dụng lớp đa luồng
+        MyThread thread1 = new MyThread("Thread 1");
+        MyThread thread2 = new MyThread("Thread 2");
+
+        thread1.start();
+        thread2.start();
+
+        // Xử lý ngoại lệ
+        try {
+            int result = divideNumbers(10, 0);
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+
+        // Sử dụng ArrayList
+        List<String> colors = new ArrayList<>();
+        colors.add("Red");
+        colors.add("Green");
+        colors.add("Blue");
+
+        System.out.println("Colors: " + colors);
+    }
+
+    // Phương thức xử lý ngoại lệ
+    public static int divideNumbers(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+        return a / b;
+    }
+}
