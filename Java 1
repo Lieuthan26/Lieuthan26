@@ -160,3 +160,53 @@ public class AdvancedJavaExample {
         return a / b;
     }
 }
+
+
+
+Bai 3
+
+public class ArrayExample {
+    public static void main(String[] args) {
+        // Khai báo và khởi tạo mảng
+        int[] myArray = {1, 2, 3, 4, 5};
+
+        // In các phần tử của mảng
+        System.out.print("Array elements: ");
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.print(myArray[i] + " ");
+        }
+
+        // Tính tổng các phần tử của mảng
+        int sum = 0;
+        for (int value : myArray) {
+            sum += value;
+        }
+        System.out.println("\nSum of elements: " + sum);
+
+        // Tìm giá trị lớn nhất trong mảng
+        int max = myArray[0];
+        for (int i = 1; i < myArray.length; i++) {
+            if (myArray[i] > max) {
+                max = myArray[i];
+            }
+        }
+        System.out.println("Max value: " + max);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
