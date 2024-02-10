@@ -1,3 +1,46 @@
+// bai 1 
+
+# Khai báo một mảng
+my_array = [1, 2, 3, 4, 5]
+
+# In các phần tử của mảng
+print("Array elements:", my_array)
+
+# Truy cập phần tử của mảng
+print("Element at index 0:", my_array[0])
+print("Element at index 2:", my_array[2])
+
+# Thay đổi giá trị của phần tử
+my_array[1] = 10
+print("Updated array:", my_array)
+
+# Duyệt qua các phần tử của mảng
+print("Array elements:")
+for item in my_array:
+    print(item)
+
+# Tính tổng các phần tử của mảng
+sum_of_elements = sum(my_array)
+print("Sum of elements:", sum_of_elements)
+
+# Tìm giá trị lớn nhất và nhỏ nhất trong mảng
+max_value = max(my_array)
+min_value = min(my_array)
+print("Max value:", max_value)
+print("Min value:", min_value)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
