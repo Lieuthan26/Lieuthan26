@@ -251,6 +251,23 @@ public class ArrayExample {
 }
 
 
+// bài 5
+
+public class SumArrayElements {
+    public static void main(String[] args) {
+        // Khai báo và khởi tạo mảng
+        int[] numbers = {5, 10, 15, 20, 25};
+
+        // Tính tổng của các phần tử trong mảng
+        int sum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+
+        // Hiển thị tổng ra màn hình
+        System.out.println("Tổng của các phần tử trong mảng là: " + sum);
+    }
+}
 
 
 
