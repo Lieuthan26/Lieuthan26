@@ -32,6 +32,57 @@ public class GuessTheNumberGame {
         scanner.close();
     }
 
+// bai 2
+
+
+
+import java.util.Scanner;
+
+public class LoginSystem {
+    public static void main(String[] args) {
+        // Mảng chứa tên người dùng và mật khẩu tương ứng
+        String[] usernames = {"user1", "user2", "user3"};
+        String[] passwords = {"pass1", "pass2", "pass3"};
+
+        // Nhập tên người dùng và mật khẩu từ người dùng
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Tên người dùng: ");
+        String username = scanner.nextLine();
+        System.out.print("Mật khẩu: ");
+        String password = scanner.nextLine();
+
+        // Kiểm tra xem tên người dùng và mật khẩu có tồn tại trong mảng không
+        boolean isLoggedIn = false;
+        for (int i = 0; i < usernames.length; i++) {
+            if (username.equals(usernames[i]) && password.equals(passwords[i])) {
+                isLoggedIn = true;
+                break;
+            }
+        }
+
+        // Hiển thị kết quả
+        if (isLoggedIn) {
+            System.out.println("Đăng nhập thành công!");
+        } else {
+            System.out.println("Tên người dùng hoặc mật khẩu không đúng. Vui lòng thử lại.");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
