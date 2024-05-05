@@ -30,6 +30,30 @@ print("Max value:", max_value)
 print("Min value:", min_value)
 
 
+// bai 3
+# Khai báo một danh sách (list) các số
+numbers = [10, 5, 20, 15, 30]
+
+# Tìm giá trị lớn nhất trong danh sách
+max_value = max(numbers)
+
+# In ra giá trị lớn nhất
+print("Giá trị lớn nhất trong danh sách là:", max_value)
+Giá trị lớn nhất trong danh sách là: 30
+
+
+# Sử dụng hàm max() với nhiều đối số
+max_value = max(10, 5, 20, 15, 30)
+
+# In ra giá trị lớn nhất
+print("Giá trị lớn nhất là:", max_value)
+
+
+
+
+
+
+
 
 
 
