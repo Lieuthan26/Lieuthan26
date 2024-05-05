@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP và JavaScript</title>
+    <script>
+        function sayHello() {
+            var name = document.getElementById("name").value;
+            alert("Xin chào, " + name + "!");
+        }
+    </script>
+</head>
+<body>
+
+<h2>Chào mừng đến với trang web PHP và JavaScript</h2>
+
+<form>
+    Nhập tên của bạn: <input type="text" id="name">
+    <button type="button" onclick="sayHello()">Xin chào</button>
+</form>
+
+</body>
+</html>
 
 
 
