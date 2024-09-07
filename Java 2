@@ -70,19 +70,141 @@ public class LoginSystem {
 }
 
 
+//bai 3
 
 
+import java.util.Scanner;
 
+public class SimpleSystem {
 
+    // A basic class to represent a user with username, password, and role
+    static class User {
+        String username;
+        String password;
+        String role;
 
+        User(String username, String password, String role) {
+            this.username = username;
+            this.password = password;
+            this.role = role;
+        }
+    }
 
+    // Dummy users for demonstration (admin and user)
+    static User[] users = {
+        new User("admin", "admin123", "admin"),
+        new User("user", "user123", "user")
+    };
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
+        // User login
+        System.out.println("Welcome to the System!");
+        System.out.print("Enter your username: ");
+        String username = scanner.nextLine();
+        System.out.print("Enter your password: ");
+        String password = scanner.nextLine();
 
+        User loggedInUser = authenticate(username, password);
 
+        if (loggedInUser != null) {
+            System.out.println("\nLogin successful! Welcome, " + loggedInUser.username);
+            // Role-based menu access
+            if ("admin".equalsIgnoreCase(loggedInUser.role)) {
+                showAdminMenu(scanner);
+            } else if ("user".equalsIgnoreCase(loggedInUser.role)) {
+                showUserMenu(scanner);
+            }
+        } else {
+            System.out.println("Invalid username or password.");
+        }
 
+        scanner.close();
+    }
 
+    // Method to authenticate the user
+    public static User authenticate(String username, String password) {
+        for (User user : users) {
+            if (user.username.equals(username) && user.password.equals(password)) {
+                return user; // Return the authenticated user
+            }
+        }
+        return null; // Return null if authentication fails
+    }
 
+    // Admin menu with admin-specific operations
+    public static void showAdminMenu(Scanner scanner) {
+        int choice;
+        do {
+            System.out.println("\nAdmin Menu:");
+            System.out.println("1. View System Information");
+            System.out.println("2. Manage Users");
+            System.out.println("3. Logout");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    viewSystemInfo();
+                    break;
+                case 2:
+                    manageUsers();
+                    break;
+                case 3:
+                    System.out.println("Logging out...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        } while (choice != 3);
+    }
+
+    // User menu with basic user-specific operations
+    public static void showUserMenu(Scanner scanner) {
+        int choice;
+        do {
+            System.out.println("\nUser Menu:");
+            System.out.println("1. View Profile");
+            System.out.println("2. Logout");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    viewProfile();
+                    break;
+                case 2:
+                    System.out.println("Logging out...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        } while (choice != 2);
+    }
+
+    // Method for admin to view system information
+    public static void viewSystemInfo() {
+        System.out.println("\nSystem Information:");
+        System.out.println("Operating System: " + System.getProperty("os.name"));
+        System.out.println("Java Version: " + System.getProperty("java.version"));
+    }
+
+    // Method to simulate user management (dummy for this example)
+    public static void manageUsers() {
+        System.out.println("\nManaging Users...");
+        System.out.println("User list:");
+        for (User user : users) {
+            System.out.println("Username: " + user.username + ", Role: " + user.role);
+        }
+    }
+
+    // Method for the user to view profile (dummy for this example)
+    public static void viewProfile() {
+        System.out.println("\nProfile Information:");
+        System.out.println("This is the user's profile.");
+    }
+}
 
 
 }
