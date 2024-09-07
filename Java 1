@@ -270,6 +270,29 @@ public class SumArrayElements {
 }
 
 
+//bai 6
+import java.util.Scanner;
+
+public class StudentGradesCalculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask the user for the number of students
+        System.out.print("Enter the number of students: ");
+        int numStudents = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline
+
+        // Create arrays to store students' names and grades
+        String[] studentNames = new String[numStudents];
+        double[] studentGrades = new double[numStudents];
+
+        // Input student names and grades
+        for (int i = 0; i < numStudents; i++) {
+            System.out.print("Enter the name of student " + (i + 1) + ": ");
+            studentNames[i] = scanner.nextLine();
+
+            System.out.print("Enter the grade for " + studentNames
 
 
 
