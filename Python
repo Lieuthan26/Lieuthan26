@@ -49,6 +49,27 @@ max_value = max(10, 5, 20, 15, 30)
 print("Giá trị lớn nhất là:", max_value)
 
 
+//bai4
+
+
+# Function to calculate the sum of user inputted numbers
+def calculate_sum():
+    # Ask the user for the number of elements
+    num_count = int(input("How many numbers do you want to input? "))
+
+    # Initialize sum to 0
+    total_sum = 0
+
+    # Loop to get the numbers from the user and add them to the sum
+    for i in range(num_count):
+        number = float(input(f"Enter number {i+1}: "))
+        total_sum += number
+
+    # Print the total sum
+    print(f"\nThe total sum of the entered numbers is: {total_sum}")
+
+# Call the function to execute the code
+calculate_sum()
 
 
 
