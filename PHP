@@ -103,9 +103,68 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 //bai 3
 
+<?php
+// Simulated database to store user credentials
+$users = [];
+
+// Function to register a new user
+function registerUser($username, $password) {
+    global $users;
+
+    // Check if the username already exists
+    if (isset($users[$username])) {
+        echo "Error: Username already exists!<br>";
+        return false;
+    }
+
+    // Hash the password using a secure algorithm
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Store the username and hashed password in the "database"
+    $users[$username] = $hashedPassword;
+    echo "User '$username' registered successfully!<br>";
+    return true;
+}
+
+// Function to log in a user
+function loginUser($username, $password) {
+    global $users;
+
+    // Check if the username exists
+    if (!isset($users[$username])) {
+        echo "Error: Username not found!<br>";
+        return false;
+    }
+
+    // Verify the password using password_verify
+    if (password_verify($password, $users[$username])) {
+        echo "Login successful! Welcome, $username!<br>";
+        return true;
+    } else {
+        echo "Error: Incorrect password!<br>";
+        return false;
+    }
+}
+
+// Simulate the login system
+echo "<h3>Secure PHP Login System</h3>";
+
+// Register a new user
+registerUser("admin", "securepassword123");
+
+// Attempt to log in with correct credentials
+loginUser("admin", "securepassword123");
+
+// Attempt to log in with incorrect credentials
+loginUser("admin", "wrongpassword");
+
+// Attempt to log in with a non-existent username
+loginUser("nonexistent", "password");
+?>
 
 
 
+//bai 4
 
 
 
