@@ -71,6 +71,80 @@ def calculate_sum():
 # Call the function to execute the code
 calculate_sum()
 
+//bai5
+
+import bcrypt
+
+# In-memory "database" for user credentials
+user_database = {}
+
+def register_user(username, password):
+    """
+    Register a new user with a hashed password.
+    """
+    if username in user_database:
+        print("Error: Username already exists!")
+        return False
+    
+    # Hash the password
+    hashed_password = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+    # Store the hashed password in the "database"
+    user_database[username] = hashed_password
+    print(f"User '{username}' registered successfully!")
+    return True
+
+def login_user(username, password):
+    """
+    Log in a user by verifying the password.
+    """
+    if username not in user_database:
+        print("Error: Username not found!")
+        return False
+    
+    # Retrieve the hashed password from the database
+    stored_hashed_password = user_database[username]
+    
+    # Verify the entered password against the stored hashed password
+    if bcrypt.checkpw(password.encode(), stored_hashed_password):
+        print(f"Login successful! Welcome, {username}!")
+        return True
+    else:
+        print("Error: Incorrect password!")
+        return False
+
+def main():
+    while True:
+        print("\n--- Login System ---")
+        print("1. Register")
+        print("2. Login")
+        print("3. Exit")
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            # Register a new user
+            username = input("Enter a username: ")
+            password = input("Enter a password: ")
+            register_user(username, password)
+        elif choice == "2":
+            # Log in an existing user
+            username = input("Enter your username: ")
+            password = input("Enter your password: ")
+            login_user(username, password)
+        elif choice == "3":
+            # Exit the program
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+//bai6
+
 
 
 
