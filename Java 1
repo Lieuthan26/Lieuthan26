@@ -294,8 +294,41 @@ public class StudentGradesCalculator {
 
             System.out.print("Enter the grade for " + studentNames
 
+//bai 7
+
+import java.util.Scanner;
+
+public class LoginSystem {
+    public static void main(String[] args) {
+        // Predefined username and password
+        String predefinedUsername = "admin";
+        String predefinedPassword = "password123";
+
+        // Scanner for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for username and password
+        System.out.println("Welcome to the Login System");
+        System.out.print("Enter your username: ");
+        String username = scanner.nextLine();
+
+        System.out.print("Enter your password: ");
+        String password = scanner.nextLine();
+
+        // Check the entered username and password
+        if (username.equals(predefinedUsername) && password.equals(predefinedPassword)) {
+            System.out.println("Login successful! Welcome, " + username + "!");
+        } else {
+            System.out.println("Login failed! Incorrect username or password.");
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
 
 
+//bai 8
 
 
 
