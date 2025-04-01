@@ -330,6 +330,39 @@ public class LoginSystem {
 
 //bai 8
 
+import java.util.Scanner;
+
+public class SimpleLogin {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Thông tin tài khoản đúng
+        String correctUsername = "admin";
+        String correctPassword = "1234";
+
+        // Nhập tài khoản
+        System.out.print("Nhập tên đăng nhập: ");
+        String username = scanner.nextLine();
+
+        System.out.print("Nhập mật khẩu: ");
+        String password = scanner.nextLine();
+
+        // Kiểm tra đăng nhập
+        if (username.equals(correctUsername) && password.equals(correctPassword)) {
+            System.out.println("Đăng nhập thành công! Chào mừng " + username);
+        } else {
+            System.out.println("Sai tên đăng nhập hoặc mật khẩu.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+//bai 9
+
+
+//bài 10
 
 
 
