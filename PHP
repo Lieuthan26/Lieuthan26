@@ -166,6 +166,38 @@ loginUser("nonexistent", "password");
 
 //bai 4
 
+<?php
+session_start();
+
+$correct_user = "admin";
+$correct_pass = "1234";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    if ($username === $correct_user && $password === $correct_pass) {
+        echo "<h3>Đăng nhập thành công! Chào mừng $username.</h3>";
+    } else {
+        echo "<h3>Sai tên đăng nhập hoặc mật khẩu.</h3>";
+    }
+}
+?>
+
+<form method="post">
+    <label>Tên đăng nhập:</label>
+    <input type="text" name="username" required><br>
+    <label>Mật khẩu:</label>
+    <input type="password" name="password" required><br>
+    <button type="submit">Đăng nhập</button>
+</form>
+
+
+
+
+//bai 5
+
+
 
 
 
